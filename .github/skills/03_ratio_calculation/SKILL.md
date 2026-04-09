@@ -256,14 +256,17 @@ Generate a summary scorecard with pass/fail/flag per ratio:
 
 ## Sensitivity Analysis
 
-For any DSCR between 1.10x and 1.35x, run sensitivity scenarios:
+For any DSCR **below 1.35x** (not just the 1.10x–1.35x band), run sensitivity scenarios automatically. If DSCR is at or above 1.35x, sensitivity analysis is optional but recommended for key-man scenarios.
 
 ```
 scenario_a: Revenue declines 10% — what is DSCR?
-scenario_b: Interest rate increases 200bps (if variable rate debt) — what is DSCR?
+scenario_b: Interest rate increases 200bps (even if fixed — tests refinance risk at maturity) — what is DSCR?
 scenario_c: Owner leaves / key-man scenario — what is sustainable EBITDA?
 scenario_d: Proposed loan at max requested amount vs. proposed amount
+scenario_e: Combined stress — revenue -10% AND rate +200bps simultaneously — what is DSCR?
 ```
+
+**Combined stress (scenario_e) is required whenever base DSCR is below 1.25x.** This catches dual-shock scenarios that individual stress tests miss.
 
 ```json
 "sensitivity": {
@@ -306,3 +309,9 @@ scenario_d: Proposed loan at max requested amount vs. proposed amount
   "analyst_notes": ""
 }
 ```
+
+---
+
+## Change Log
+- 2026-04-09: Changed sensitivity trigger from "1.10x–1.35x" to "below 1.35x" — sensitivity must run for any DSCR under threshold, not just the narrow band
+- 2026-04-09: Added scenario_e (combined stress: revenue -10% AND rate +200bps) — required when base DSCR < 1.25x

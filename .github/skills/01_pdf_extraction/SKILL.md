@@ -352,3 +352,8 @@ For multiple documents in one request, return an array of these objects.
 - **Section 179** — expensed immediately on the tax return but treated as a multi-year depreciation add-back for cash flow spreading purposes.
 - **Billings in excess of costs (overbillings)** — a liability on the balance sheet, not deferred revenue in the traditional sense. Flag for underwriter review.
 - **LOC drawn at year-end** — note balance and whether payoff occurred post-period (check notes).
+
+---
+
+## Change Log
+- 2026-04-09: Phase 1 testing complete — all 5 doc types (1040, 1120S, 1065, PL, BS) extracted successfully. No schema gaps found.

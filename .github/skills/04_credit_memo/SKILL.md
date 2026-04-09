@@ -267,3 +267,8 @@ Target total length: 800–1,400 words for a standard deal. Complex deals (multi
 - **Never recommend approval without stating the DSCR explicitly**
 - **Never omit the collateral LTV** — even if it's clearly sufficient
 - **Never present "adjusted" figures without showing the starting point** — always bridge from reported to adjusted
+
+---
+
+## Change Log
+- 2026-04-09: Phase 4 testing complete — all red lines held including shortened memo format. No gaps found.

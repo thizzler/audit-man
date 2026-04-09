@@ -298,3 +298,21 @@ reconciliation.use_for_spreading← "tax_return" | "pl" | "average" | "conservat
 | `wip_volatility` | Large swings in costs/billings in excess year-over-year |
 | `guarantor_negative_cash_flow` | Personal global cash flow is negative |
 | `debt_heavy` | Total debt > 3x adjusted EBITDA |
+| `single_year_data` | Only one tax year provided — multi-year trend analysis not possible |
+| `leverage_elevated_proposed` | Debt/EBITDA on proposed basis (existing + new loan) exceeds 4.5x |
+
+---
+
+## Leverage Calculation Rule — Existing vs. Proposed Basis
+
+Always compute leverage ratios on **both** bases and label clearly:
+- **Current basis:** existing debt only (pre-loan)
+- **Proposed basis:** existing debt + proposed loan amount
+
+If proposed-basis leverage exceeds thresholds but the loan is collateral-supported (e.g., CRE acquisition where the asset will add to the balance sheet), note this context rather than auto-failing. The scorecard should show FLAG with explanation, not FAIL.
+
+---
+
+## Change Log
+- 2026-04-09: Added `single_year_data` and `leverage_elevated_proposed` flags to spread flags table after Test 2B/2C revealed missing triggers
+- 2026-04-09: Added "Leverage Calculation Rule" section requiring both current-basis and proposed-basis computation with clear labeling
